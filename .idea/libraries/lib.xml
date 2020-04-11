@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file:///Library/Java/JavaVirtualMachines/javafx-sdk-13.0.2/lib" />
+      <root url="jar://$PROJECT_DIR$/sqlite-jdbc-3.30.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file:///Library/Java/JavaVirtualMachines/javafx-sdk-13.0.2/lib" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file:///Library/Java/JavaVirtualMachines/javafx-sdk-13.0.2/lib" />
+    </SOURCES>
+    <jarDirectory url="file:///Library/Java/JavaVirtualMachines/javafx-sdk-13.0.2/lib" recursive="false" />
+    <jarDirectory url="file:///Library/Java/JavaVirtualMachines/javafx-sdk-13.0.2/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>
