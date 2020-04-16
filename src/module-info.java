@@ -4,6 +4,6 @@ module SoftwareOne {
     requires java.sql;
 
     opens org.openjfx to javafx.fxml;
-    exports controllers to javafx.fxml;
+    opens controllers to javafx.fxml;
     exports org.openjfx;
 }

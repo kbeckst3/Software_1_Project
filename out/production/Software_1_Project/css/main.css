@@ -1,6 +1,6 @@
 #title {
     -fx-font: 24 arial;
-
+    -fx-padding: 20px;
 }
 
 #partsProducts > GridPane {
@@ -9,4 +9,9 @@
     -fx-border-style: solid;
     -fx-border-radius: 2%;
     -fx-padding: 10px;
+}
+
+#subTitle {
+    -fx-font: 17 arial;
+    -fx-padding: 20px;
 }

@@ -11,9 +11,10 @@ public class Main extends Application {
 
     public  void start(Stage primaryStage) throws Exception{
         // Load the font
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/mainscreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/partScreen.fxml"));
 
-        primaryStage.setScene(new Scene(root, 1200, 525));
+//        primaryStage.setScene(new Scene(root, 1005, 460));
+        primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
