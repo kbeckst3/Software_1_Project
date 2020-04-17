@@ -1,18 +1,16 @@
 package model;
 
 
-import java.text.NumberFormat;
-
 public abstract class Part {
 
     private int id;
     private String name;
-    private double stock;
+    private int stock;
     private double price;
     private int max;
     private int min;
 
-    public Part(int id, String name, double stock, double price, int max, int min) {
+    public Part(int id, String name, int stock, double price, int max, int min) {
         this.id = id;
         this.name = name;
         this.stock = stock;
@@ -37,11 +35,11 @@ public abstract class Part {
         this.name = name;
     }
 
-    public double getStock() {
+    public int getStock() {
         return stock;
     }
 
-    public void setStock(double stock) {
+    public void setStock(int stock) {
         this.stock = stock;
     }
 
@@ -67,6 +65,18 @@ public abstract class Part {
 
     public void setMin(int min) {
         this.min = min;
+    }
+
+    @Override
+    public String toString() {
+        return "Part{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", stock=" + stock +
+                ", price=" + price +
+                ", max=" + max +
+                ", min=" + min +
+                '}';
     }
 }
 

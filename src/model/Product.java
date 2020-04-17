@@ -4,20 +4,30 @@ import javafx.collections.ObservableList;
 
 public class Product {
     private ObservableList<Part> associatedParts;
+    private int id;
     private String name;
     private double price;
     private int stock;
     private int min;
     private int max;
 
-    public Product(ObservableList<Part> associatedParts, String name, double price, int stock, int min, int max) {
+    public Product(int id, String name, double price, int stock, int min, int max) {
 
-        this.associatedParts = associatedParts;
+//        this.associatedParts = associatedParts;
+        this.id = id;
         this.name = name;
         this.price = price;
         this.stock = stock;
         this.min = min;
         this.max = max;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -70,5 +80,17 @@ public class Product {
 
     public void addAssociatedPart(Part selectedPart) {
 
+    }
+    @Override
+    public String toString() {
+        return "Product{" +
+                "associatedParts=" + associatedParts +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", stock=" + stock +
+                ", min=" + min +
+                ", max=" + max +
+                '}';
     }
 }
