@@ -7,10 +7,10 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <HBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProductScreen">
    <children>
@@ -18,14 +18,34 @@
          <children>
             <VBox alignment="CENTER" fillWidth="false" prefHeight="522.0" prefWidth="358.0" spacing="20" stylesheets="@../css/main.css">
                <children>
-                  <HBox alignment="TOP_CENTER" prefHeight="33.0" prefWidth="354.0" translateX="-75.0" translateY="-25.0">
+                  <StackPane prefHeight="43.0" prefWidth="328.0">
                      <children>
-                        <Text fx:id="subTitle" text="Add Product" />
+                        <HBox alignment="TOP_CENTER" prefHeight="33.0" prefWidth="354.0">
+                           <children>
+                              <Text fx:id="addProductTitle" text="Add Product">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="145.0">
+                           <children>
+                              <Text fx:id="modifyProductTitle" text="Modify Product" visible="false">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </HBox>
                      </children>
-                     <padding>
-                        <Insets top="15.0" />
-                     </padding>
-                  </HBox>
+                  </StackPane>
                   <HBox alignment="CENTER" prefHeight="223.0" prefWidth="519.0">
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="30.0">
@@ -62,35 +82,35 @@
                         </VBox>
                         <VBox prefHeight="272.0" prefWidth="149.0" spacing="20.0">
                            <children>
-                              <TextField alignment="TOP_LEFT" disable="true" prefWidth="0.0" promptText="Auto Gen - Disabled">
+                              <TextField fx:id="productId" alignment="TOP_LEFT" disable="true" prefWidth="0.0">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </TextField>
-                              <TextField alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" prefWidth="0.0" promptText="Product Name">
+                              <TextField fx:id="productName" alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" prefWidth="0.0" promptText="Product Name">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </TextField>
-                              <TextField alignment="TOP_LEFT" layoutX="10.0" layoutY="37.0" prefWidth="0.0" promptText="Inv">
+                              <TextField fx:id="productInv" alignment="TOP_LEFT" layoutX="10.0" layoutY="37.0" prefWidth="0.0" promptText="Inv">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </TextField>
-                              <TextField alignment="TOP_LEFT" layoutX="10.0" layoutY="64.0" prefHeight="27.0" prefWidth="0.0" promptText="Price">
+                              <TextField fx:id="productPrice" alignment="TOP_LEFT" layoutX="10.0" layoutY="64.0" prefHeight="27.0" prefWidth="0.0" promptText="Price">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </TextField>
                               <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
                                  <children>
-                                    <TextField alignment="TOP_LEFT" prefHeight="27.0" prefWidth="51.0" promptText="Max" />
+                                    <TextField fx:id="productMax" alignment="TOP_LEFT" prefHeight="27.0" prefWidth="51.0" promptText="Max" />
                                     <Label text="Min">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="59.0" promptText="Min" />
+                                    <TextField fx:id="productMin" alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="59.0" promptText="Min" />
                                  </children>
                               </HBox>
                            </children>
@@ -106,16 +126,16 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="28.0" prefWidth="441.0" spacing="20.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" minWidth="75.0" mnemonicParsing="false" text="Search" />
-                        <TextField />
+                        <Button onAction="#searchPartsTable" fx:id="partSearchButton" alignment="CENTER" contentDisplay="CENTER" minWidth="75.0" mnemonicParsing="false" text="Search" />
+                        <TextField fx:id="partSearchField" promptText="Search..." />
                      </children>
                   </HBox>
-                  <TableView prefHeight="150.0" prefWidth="200.0">
+                  <TableView fx:id="partTable" prefHeight="150.0" prefWidth="200.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Part ID" />
-                      <TableColumn prefWidth="75.0" text="Part Name" />
-                        <TableColumn prefWidth="75.0" text="Inventory Level" />
-                        <TableColumn prefWidth="75.0" text="Price per Unit" />
+                      <TableColumn fx:id="partTableId" prefWidth="75.0" text="Part ID" />
+                      <TableColumn fx:id="partTableName" prefWidth="75.0" text="Part Name" />
+                        <TableColumn fx:id="partTableInv" prefWidth="75.0" text="Inventory Level" />
+                        <TableColumn fx:id="partTablePrice" prefWidth="75.0" text="Price per Unit" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -123,7 +143,7 @@
                   </TableView>
                   <HBox alignment="BOTTOM_RIGHT" prefHeight="28.0" prefWidth="441.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" minWidth="75.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" text="Add" textAlignment="CENTER" />
+                        <Button fx:id="addAssociatedPart" alignment="CENTER" contentDisplay="CENTER" minWidth="75.0" mnemonicParsing="false" onAction="#addAssociatedPart" prefHeight="27.0" prefWidth="72.0" text="Add" textAlignment="CENTER" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -132,12 +152,12 @@
                         <Insets right="15.0" />
                      </padding>
                   </HBox>
-                  <TableView layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="459.0">
+                  <TableView fx:id="associatedPartTable" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="459.0">
                      <columns>
-                        <TableColumn prefWidth="75.0" text="Part ID" />
-                        <TableColumn prefWidth="75.0" text="Part Name" />
-                        <TableColumn prefWidth="75.0" text="Inventory Level" />
-                        <TableColumn prefWidth="75.0" text="Price per Unit" />
+                        <TableColumn fx:id="associatePartId" prefWidth="75.0" text="Part ID" />
+                        <TableColumn fx:id="associatedPartName" prefWidth="75.0" text="Part Name" />
+                        <TableColumn fx:id="associatedPartInv" prefWidth="75.0" text="Inventory Level" />
+                        <TableColumn fx:id="associatedPartPrice" prefWidth="75.0" text="Price per Unit" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -145,7 +165,7 @@
                   </TableView>
                   <HBox alignment="BOTTOM_RIGHT" prefHeight="29.0" prefWidth="441.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" minWidth="75.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Delete" />
+                        <Button fx:id="deleteAssociatedPart" alignment="CENTER" contentDisplay="CENTER" minWidth="75.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#deleteAssociatePart" text="Delete" />
                      </children>
                      <padding>
                         <Insets right="15.0" />
@@ -153,8 +173,8 @@
                   </HBox>
                   <HBox alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="468.0" prefHeight="29.0" prefWidth="441.0" spacing="15.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" minWidth="75.0" mnemonicParsing="false" text="Save" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" minWidth="75.0" mnemonicParsing="false" text="Cancel" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" minWidth="75.0" mnemonicParsing="false" onAction="#saveProduct" text="Save" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" minWidth="75.0" mnemonicParsing="false" onAction="#cancelProductWindow" text="Cancel" />
                      </children>
                      <padding>
                         <Insets right="15.0" />

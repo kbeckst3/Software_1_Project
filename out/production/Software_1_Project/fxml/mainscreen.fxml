@@ -40,9 +40,9 @@
             </TableView>
             <HBox alignment="TOP_RIGHT" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
 
-                <Button fx:id="partAdd" text="Add" />
-                <Button fx:id="partModify" text="Modify" />
-                <Button fx:id="partDelete" text="Delete" />
+                <Button onAction="#openPartsWindow" fx:id="partAdd" text="Add" />
+                <Button onAction="#openPartsWindow" fx:id="partModify" text="Modify" />
+                <Button onAction="#deletePart" fx:id="partDelete" text="Delete" />
 
             </HBox>
          <columnConstraints>
@@ -81,9 +81,9 @@
             </TableView>
             <HBox alignment="TOP_RIGHT" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
 
-                <Button fx:id="productAdd" text="Add" />
-                <Button fx:id="productModify" text="Modify" />
-                <Button fx:id="productDelete" text="Delete" />
+                <Button onAction="#openProductsWindow" fx:id="productAdd" text="Add" />
+                <Button onAction="#openProductsWindow" fx:id="productModify" text="Modify" />
+                <Button onAction="#deleteProduct" fx:id="productDelete" text="Delete" />
 
             </HBox>
          <columnConstraints>
