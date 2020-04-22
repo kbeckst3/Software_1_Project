@@ -39,7 +39,7 @@ public class ProductScreen {
     public ObservableList<Part> associatedParts = FXCollections.observableArrayList();
     public Text modifyProductTitle;
 
-    public void initialize(){
+    public void initialize() {
         //Populate parts table with current parts
         partTableId.setCellValueFactory(cellData -> new ReadOnlyIntegerWrapper(cellData.getValue().getId()));
         partTableName.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
@@ -62,11 +62,11 @@ public class ProductScreen {
         //creating id if adding a new part or grabbing the old id.
         int id;
 
-        if(productId.getText().isEmpty()){
+        if (productId.getText().isEmpty()) {
             id = idGenerate();
-        }else id = Integer.parseInt(productId.getText());
+        } else id = Integer.parseInt(productId.getText());
 
-        return new Product(id, name, stock, price,  max, min, associatedParts);
+        return new Product(id, name, stock, price, max, min, associatedParts);
     }
 
     @FXML
@@ -75,7 +75,7 @@ public class ProductScreen {
         //New or Updated Part
         Product productToBeAdded;
 
-        if(validateProductFields()) {
+        if (validateProductFields()) {
             String name = productName.getText();
             double price = Double.parseDouble(productPrice.getText());
             int stock = Integer.parseInt(productInv.getText());
@@ -126,6 +126,7 @@ public class ProductScreen {
         sortTable.setItems(searchedList);
 
     }
+
     @FXML
     public void searchPartsTable() {
         searchTable(partSearchField, Inventory.getAllParts(), partTable);
@@ -133,16 +134,21 @@ public class ProductScreen {
     }
 
     @FXML
-    public void addAssociatedPart(){
-       Part part = partTable.getSelectionModel().getSelectedItem();
-       //TODO if part already exists give user a warning
+    public void addAssociatedPart() {
+        Part part = partTable.getSelectionModel().getSelectedItem();
+        for(Part p : associatedParts){
+            if(p.getId() == part.getId()){
+                Alert partAlreadyExists = new Alert(Alert.AlertType.ERROR, p.getName() + " is already an associated part! Please select a different part.");
+                partAlreadyExists.showAndWait();
+                return;
+            }
+        }
         associatedParts.add(part);
     }
 
-    public void deleteAssociatePart(){
+    public void deleteAssociatePart() {
         Part part = associatedPartTable.getSelectionModel().getSelectedItem();
-        //TODO if part already exists give user a warning
-        for(int i = 0; i < associatedParts.size(); i++ )
+        for (int i = 0; i < associatedParts.size(); i++)
             if (part.getId() == associatedParts.get(i).getId()) {
                 associatedParts.remove(i);
                 break;
@@ -156,39 +162,57 @@ public class ProductScreen {
         stage.close();
     }
 
-    private boolean validateProductFields(){
+    private boolean validateProductFields() {
 
         String name = productName.getText();
         String price = productPrice.getText();
         String stock = productInv.getText();
         String max = productMax.getText();
         String min = productMin.getText();
+        //Parts sum  for validating that product price is greater than sum of total parts
+        double sumOfParts = 0;
+        for(Part p : associatedParts){
+            sumOfParts += p.getPrice();
+        }
         Alert noValueAlert = new Alert(Alert.AlertType.ERROR);
 
-        if(name.isEmpty()){
+        if (name.isEmpty()) {
             noValueAlert.setContentText("Please enter a value for \bName");
             noValueAlert.showAndWait();
             productName.setStyle("-fx-border-color: red;");
-        }else if(stock.isEmpty()){
+        } else if (stock.isEmpty()) {
             noValueAlert.setContentText("Please enter a value for \bInventory");
             noValueAlert.showAndWait();
             productInv.setStyle("-fx-border-color: red;");
-        }else if(price.isEmpty()){
+        } else if (price.isEmpty()) {
             noValueAlert.setContentText("Please enter a value for \bPrice");
             noValueAlert.showAndWait();
             productPrice.setStyle("-fx-border-color: red;");
-        }else if(max.isEmpty()){
+        } else if (max.isEmpty()) {
             noValueAlert.setContentText("Please enter a value for \bMax");
             noValueAlert.showAndWait();
             productMax.setStyle("-fx-border-color: red;");
-        }else if(min.isEmpty()){
+        } else if (min.isEmpty()) {
             noValueAlert.setContentText("Please enter a value for \bMin");
             noValueAlert.showAndWait();
             productMin.setStyle("-fx-border-color: red;");
-        }else if(Integer.parseInt(max) < Integer.parseInt(min)){
+        } else if (Integer.parseInt(max) < Integer.parseInt(min)) {
             Alert incorrectValues = new Alert(Alert.AlertType.ERROR, "Minimum is greater than Maximum please fix!");
             incorrectValues.showAndWait();
-        }else{
+        } else if ((Double.parseDouble(price)) < 0) {
+            Alert incorrectValues = new Alert(Alert.AlertType.ERROR, "Price must be greater than 0!");
+            incorrectValues.showAndWait();
+        } else if (Integer.parseInt(max) < Integer.parseInt(stock) && Integer.parseInt(min) < Integer.parseInt(stock)) {
+            Alert incorrectValues = new Alert(Alert.AlertType.ERROR, "Inventory must be less than the max and greater than the min!");
+            incorrectValues.showAndWait();
+        } else if(Double.parseDouble(price) < sumOfParts){
+            Alert incorrectValues = new Alert(Alert.AlertType.ERROR, "Product price must be greater than sum of associated part prices. \n current sum of associated parts: "
+            + sumOfParts);
+            incorrectValues.showAndWait();
+        }else if(sumOfParts <= 0){
+            Alert incorrectValues = new Alert(Alert.AlertType.ERROR, "Product must have at least one associated part please add part!");
+            incorrectValues.showAndWait();
+        }else {
             return true;
         }
 

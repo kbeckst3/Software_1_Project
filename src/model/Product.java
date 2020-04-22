@@ -81,22 +81,9 @@ public class Product {
         return associatedParts;
     }
 
-    public boolean deleteAssociatedPart(Part part) {
-        boolean productSuccessfullyDeleted = false;
-        for (int i = 0; i < associatedParts.size(); i++) {
-            if (associatedParts.get(i).getId() == part.getId()) {
-                associatedParts.remove(i);
-                productSuccessfullyDeleted = true;
-                break;
-            }
-        }
-        return productSuccessfullyDeleted;
-    }
-
     @Override
     public String toString() {
         return "Product{" +
-                "associatedParts=" + associatedParts +
                 ", id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +

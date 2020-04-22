@@ -33,28 +33,23 @@ public class Inventory {
 
     }
 
-    public static boolean deletePart(Part part) {
-        boolean partSuccessfullyDeleted = false;
+    public static void deletePart(Part part) {
         for (int i = 0; i < allParts.size(); i++) {
             if (allParts.get(i).getId() == part.getId()) {
                 allParts.remove(i);
-                partSuccessfullyDeleted = true;
                 break;
             }
         }
-        return partSuccessfullyDeleted;
     }
 
-    public static boolean deleteProduct(Product product) {
-        boolean productSuccessfullyDeleted = false;
+    public static void deleteProduct(Product product) {
         for (int i = 0; i < allProducts.size(); i++) {
             if (allProducts.get(i).getId() == product.getId()) {
+                System.out.println("Part is deleting");
                 allProducts.remove(i);
-                productSuccessfullyDeleted = true;
                 break;
             }
         }
-        return productSuccessfullyDeleted;
     }
 
     public static ObservableList<Part> getAllParts() {

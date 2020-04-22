@@ -163,6 +163,12 @@ public class PartScreen {
         }else if(Integer.parseInt(max) < Integer.parseInt(min)) {
             Alert incorrectValues = new Alert(Alert.AlertType.ERROR, "Minimum is greater than Maximum please fix!");
             incorrectValues.showAndWait();
+        }else if(Double.parseDouble(price) > 0){
+            Alert incorrectValues = new Alert(Alert.AlertType.ERROR, "Price must be greater than 0!");
+            incorrectValues.showAndWait();
+        }else if(Integer.parseInt(max) > Integer.parseInt(stock) && Integer.parseInt(min) < Integer.parseInt(stock)){
+            Alert incorrectValues = new Alert(Alert.AlertType.ERROR, "Inventory must be less than the max and greater than the min!");
+            incorrectValues.showAndWait();
         }else{
             return true;
         }
@@ -171,6 +177,6 @@ public class PartScreen {
     }
 
     private int idGenerate() {
-        return Inventory.getAllParts().size() + 1;
+        return Inventory.getAllProducts().size() + 1;
     }
 }

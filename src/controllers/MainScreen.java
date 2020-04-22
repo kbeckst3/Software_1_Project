@@ -1,7 +1,9 @@
 package controllers;
 
 
-import javafx.beans.property.*;
+import javafx.beans.property.ReadOnlyDoubleWrapper;
+import javafx.beans.property.ReadOnlyIntegerWrapper;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -44,10 +46,8 @@ public class MainScreen {
     public TableColumn<Product, String> productName;
     @FXML
     public Button productAdd, productModify, productDelete;
+    @FXML
     public TextField productSearch, partSearch;
-
-    private ObservableList<Part> partList = FXCollections.observableArrayList();
-    private ObservableList<Product> productList = FXCollections.observableArrayList();
 
     //Populating the partsTable and productsTable
     public void initialize() {
@@ -56,38 +56,39 @@ public class MainScreen {
         productName.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
         productInv.setCellValueFactory(cellData -> new ReadOnlyIntegerWrapper(cellData.getValue().getStock()));
         productPrice.setCellValueFactory(cellData -> new ReadOnlyDoubleWrapper(cellData.getValue().getPrice()));
-        Inventory.addProduct(new Product(1, "myProduct", 2, 3, 3, 3, Inventory.getAllParts()));
-        Inventory.addProduct(new Product(12, "theirProduct", 27, 38, 83, 83, partList));
-        Inventory.addProduct(new Product(34, "itProduct", 7, 7, 9, 9, partList));
+        Inventory.addProduct(new Product(1, "myProduct", 5, 125, 3, 15, Inventory.getAllParts()));
+        Inventory.addProduct(new Product(2, "theirProduct", 10, 150, 6, 30, Inventory.getAllParts()));
+        Inventory.addProduct(new Product(3, "itsProduct", 15, 175, 9, 45, Inventory.getAllParts()));
         productTable.setItems(Inventory.getAllProducts());
 
         partId.setCellValueFactory(cellData -> new ReadOnlyIntegerWrapper(cellData.getValue().getId()));
         partName.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
         partInv.setCellValueFactory(cellData -> new ReadOnlyIntegerWrapper(cellData.getValue().getStock()));
         partPrice.setCellValueFactory(cellData -> new ReadOnlyDoubleWrapper(cellData.getValue().getPrice()));
-        Inventory.addPart(new InHouse(1, "myPart", 2, 3, 3, 3, 23));
-        Inventory.addPart(new InHouse(150, "hisPart", 4, 5, 6, 6, 34));
-        Inventory.addPart(new InHouse(164, "herPart", 23, 34, 34, 33, 32));
-        Inventory.addPart(new Outsourced(69, "herPart", 23, 34, 34, 33, "dog"));
+        Inventory.addPart(new InHouse(1, "myPart", 5, 5, 10, 1, 23));
+        Inventory.addPart(new InHouse(2, "hisPart", 10, 10, 20, 2, 34));
+        Inventory.addPart(new Outsourced(3, "herPart", 15, 15, 30, 3, "Acme"));
+        Inventory.addPart(new Outsourced(4, "TheirPart", 20, 20, 40, 4, "ABC"));
         partTable.setItems(Inventory.getAllParts());
     }
 
     //Filters table based on search entry
     private static void searchTable(TextField field,
-                                    ObservableList list,
-                                    TableView sortTable) {
+                                    ObservableList<?> list,
+                                    TableView<?> sortTable) {
         //Declaring Variables
         ObservableList searchedList = FXCollections.observableArrayList();
-        String searchText;
-        //Getting Button ID
-        //Removing button from end of id
+
+        System.out.println(field.getText());
 
         //Get Correct Text Field and perform search
         String[] parts = field.getText().toUpperCase().split(" ");
         for (Object entry : list) {
+            System.out.println(entry);
             boolean match = true;
             String entryText = entry.toString();
             for (String part : parts) {
+                System.out.println(part);
                 // The entry needs to contain all portions of the
                 // search string *but* in any order
                 if (!entryText.toUpperCase().contains(part)) {
@@ -106,13 +107,13 @@ public class MainScreen {
 
     @FXML
     public void searchPartsTable() {
-        searchTable(partSearch, partList, partTable);
+        searchTable(partSearch, Inventory.getAllParts(), partTable);
 
     }
 
     @FXML
     public void searchProductTable() {
-        searchTable(productSearch, productList, productTable);
+        searchTable(productSearch, Inventory.getAllProducts(), productTable);
 
     }
 
@@ -210,7 +211,7 @@ public class MainScreen {
         String clickedButton = selectedButton.getText();
 
         //Alert used if user does not select product to modify
-        Alert alert = new Alert(Alert.AlertType.ERROR, "No Part Selected! Please select  a part. ");
+        Alert alert = new Alert(Alert.AlertType.ERROR, "No Product Selected! Please select a product. ");
         if (clickedButton.equals("Modify") && !productTable.getSelectionModel().isEmpty()) {
             Product product = productTable.getSelectionModel().getSelectedItem();
             productScreen.addProductTitle.setVisible(false);
@@ -228,7 +229,9 @@ public class MainScreen {
             productScreen.productPrice.setText(String.valueOf(product.getPrice()));
             productScreen.productMax.setText(String.valueOf(product.getMax()));
             productScreen.productMin.setText(String.valueOf(product.getMin()));
-        }else if(partTable.getSelectionModel().isEmpty() && !clickedButton.equals("Add")){
+
+        }
+        if(productTable.getSelectionModel().isEmpty() && !clickedButton.equals("Add")){
             alert.showAndWait();
         }else {
 
@@ -253,6 +256,5 @@ public class MainScreen {
         }
     }
 
-    //Open Product Screen for creation and deletion of products
 
 }
