@@ -2,20 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Software_1_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Software_1_Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/controllers/MainScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/controllers/MainScreen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/controllers/PartScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/controllers/PartScreen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/controllers/ProductScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/controllers/ProductScreen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/fxml/mainscreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/fxml/mainscreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/fxml/partScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/fxml/partScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/fxml/productScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/fxml/productScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/model/InHouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/model/InHouse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/model/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/model/Inventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/model/Outsourced.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/model/Outsourced.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/model/Part.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/model/Part.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Software_1_Project/org/openjfx/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software_1_Project/org/openjfx/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/fxml/mainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/mainScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlite-jdbc-3.30.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MainScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/PartScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/PartScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ProductScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fxml/partScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/partScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fxml/productScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/productScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/openjfx/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/openjfx/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +141,7 @@
       <recent name="$PROJECT_DIR$/resources/fxml" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -148,21 +157,9 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-    <configuration name="Connect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="connection.Connect" />
-      <module name="Software_1_Project" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="connection.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.openjfx.Main" />
       <module name="Software_1_Project" />
       <extension name="coverage">
@@ -227,13 +224,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Connect" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Connect" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -266,7 +258,8 @@
       <workItem from="1586965409665" duration="67720000" />
       <workItem from="1587221098084" duration="2249000" />
       <workItem from="1587405263753" duration="40105000" />
-      <workItem from="1587576518395" duration="5742000" />
+      <workItem from="1587576518395" duration="6085000" />
+      <workItem from="1587660631707" duration="4056000" />
     </task>
     <servers />
   </component>
@@ -290,11 +283,16 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="190" width="800" height="717" key="#Intentions/0.0.1680.1050@0.0.1680.1050" timestamp="1584224434237" />
-    <state x="304" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585693640057">
+    <state x="440" y="190" key="#Project_Structure" timestamp="1587662256661">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="190" key="#Project_Structure/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587662256661" />
+    <state x="304" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587664065572">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="304" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1585693640057" />
     <state x="304" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1583597255379" />
+    <state x="304" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587664065572" />
     <state x="546" y="346" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583597651794">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -331,36 +329,36 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="597" y="403" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1680.1050@0.0.1680.1050" timestamp="1584562082875" />
-    <state width="1638" height="266" key="GridCell.Tab.0.bottom" timestamp="1587596194280">
+    <state width="1638" height="266" key="GridCell.Tab.0.bottom" timestamp="1587664807228">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="266" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1587432812670" />
     <state width="819" height="266" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1586636832752" />
-    <state width="1638" height="266" key="GridCell.Tab.0.bottom/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587596194280" />
+    <state width="1638" height="266" key="GridCell.Tab.0.bottom/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587664807228" />
     <state width="1638" height="362" key="GridCell.Tab.0.bottom/1680.194.960.681/0.0.1680.1050@0.0.1680.1050" timestamp="1587519794002" />
     <state width="1638" height="266" key="GridCell.Tab.0.bottom/1680.194.960.681/0.23.1680.1027@0.23.1680.1027" timestamp="1587475484114" />
-    <state width="1638" height="266" key="GridCell.Tab.0.center" timestamp="1587596194278">
+    <state width="1638" height="266" key="GridCell.Tab.0.center" timestamp="1587664807226">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="266" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1587432812669" />
     <state width="819" height="266" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1586636832751" />
-    <state width="1638" height="266" key="GridCell.Tab.0.center/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587596194278" />
+    <state width="1638" height="266" key="GridCell.Tab.0.center/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587664807226" />
     <state width="1638" height="362" key="GridCell.Tab.0.center/1680.194.960.681/0.0.1680.1050@0.0.1680.1050" timestamp="1587519794000" />
     <state width="1638" height="266" key="GridCell.Tab.0.center/1680.194.960.681/0.23.1680.1027@0.23.1680.1027" timestamp="1587475484112" />
-    <state width="1638" height="266" key="GridCell.Tab.0.left" timestamp="1587596194278">
+    <state width="1638" height="266" key="GridCell.Tab.0.left" timestamp="1587664807225">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="266" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1587432812668" />
     <state width="819" height="266" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1586636832750" />
-    <state width="1638" height="266" key="GridCell.Tab.0.left/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587596194278" />
+    <state width="1638" height="266" key="GridCell.Tab.0.left/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587664807225" />
     <state width="1638" height="362" key="GridCell.Tab.0.left/1680.194.960.681/0.0.1680.1050@0.0.1680.1050" timestamp="1587519793997" />
     <state width="1638" height="266" key="GridCell.Tab.0.left/1680.194.960.681/0.23.1680.1027@0.23.1680.1027" timestamp="1587475484112" />
-    <state width="1638" height="266" key="GridCell.Tab.0.right" timestamp="1587596194279">
+    <state width="1638" height="266" key="GridCell.Tab.0.right" timestamp="1587664807227">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="266" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1587432812669" />
     <state width="819" height="266" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1586636832752" />
-    <state width="1638" height="266" key="GridCell.Tab.0.right/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587596194279" />
+    <state width="1638" height="266" key="GridCell.Tab.0.right/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587664807227" />
     <state width="1638" height="362" key="GridCell.Tab.0.right/1680.194.960.681/0.0.1680.1050@0.0.1680.1050" timestamp="1587519794001" />
     <state width="1638" height="266" key="GridCell.Tab.0.right/1680.194.960.681/0.23.1680.1027@0.23.1680.1027" timestamp="1587475484113" />
     <state width="1638" height="362" key="GridCell.Tab.1.bottom" timestamp="1587519794005">
@@ -387,16 +385,18 @@
     <state width="1638" height="362" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1587423514166" />
     <state width="1638" height="362" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1587423302787" />
     <state width="1638" height="362" key="GridCell.Tab.1.right/1680.194.960.681/0.0.1680.1050@0.0.1680.1050" timestamp="1587519794004" />
-    <state x="328" y="106" key="SettingsEditor" timestamp="1586904751520">
+    <state x="459" y="89" key="SettingsEditor" timestamp="1587663894499">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586904751520" />
-    <state x="517" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1587576527505">
+    <state x="459" y="89" key="SettingsEditor/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587663894499" />
+    <state x="459" y="89" key="SettingsEditor/1680.194.960.681/0.0.1680.1050@0.0.1680.1050" timestamp="1587661456036" />
+    <state x="517" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1587660633748">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="517" y="354" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587405589375" />
     <state x="517" y="369" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1583597615952" />
-    <state x="517" y="354" key="com.intellij.ide.util.TipDialog/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587576527505" />
+    <state x="517" y="354" key="com.intellij.ide.util.TipDialog/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587660633748" />
     <state x="578" y="309" key="extract.method.dialog" timestamp="1587578777782">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -409,6 +409,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="600" height="424" key="javadoc.popup/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587143154853" />
+    <state x="217" y="147" key="new project wizard" timestamp="1587663346243">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="217" y="147" key="new project wizard/1680.171.960.704/0.0.1680.1050@0.0.1680.1050" timestamp="1587663346243" />
     <state x="546" y="138" key="refactoring.ChangeSignatureDialog" timestamp="1587264856273">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<GridPane fx:id="container" hgap="25" prefHeight="445.0" prefWidth="1010.0" stylesheets="@../css/main.css" vgap="15" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainScreen">
+<GridPane fx:id="container" hgap="25" prefHeight="445.0" prefWidth="1010.0" stylesheets="@../css/main.css" vgap="15" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.MainScreen">
 
     <Text fx:id="title" textAlignment="CENTER" wrappingWidth="335.15625" GridPane.columnIndex="1" GridPane.rowIndex="1"> Inventory Management System </Text>
 
